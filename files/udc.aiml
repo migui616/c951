@@ -189,7 +189,7 @@
       </template>
   </category>
 
-<category>
+  <category>
       <pattern> MATHEMATICS </pattern>
       <template> 
       <message> Do you prefer statistics or number theory? </message>
