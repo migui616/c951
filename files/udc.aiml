@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml>
+    
+    <!--Introduction to user-->
+    <category>
+        <pattern> * </pattern>
+        <template> Sorry, I didn't understand that. Please try again! </template>
+    </category>
+    
+    <category>
+        <pattern> HELLO </pattern>
+        <template> <srai> HI </srai> </template>
+    </category>
+    
+    <category>
+        <pattern> HI </pattern>
+        <template> <srai> HI </srai> </template>
+    </category>
+    
+    <category>
+        <pattern> START </pattern>
+        <template> <srai> HI </srai> </template>
+    </category>
+    
+    <category>
+        <pattern> RESTART </pattern>
+        <template> <srai> HI </srai> </template>
+    </category>
+    
+    <category>
+        <pattern> START OVER </pattern>
+        <template> <srai> HI </srai> </template>
+    </category>
+    
+    <category>
+        <pattern> HI </pattern>
+        <template>
+        <message> Hello, I am the WGU C951 Chatbot. </message>
+        <message> What is your name? </message>
+        <message> Respond with "My name is..." </message>
+        </template>
+    </category>
+    
+    <category>
+        <pattern>MY NAME IS *</pattern>
+        <template>
+            <message>Hello <formal><set name="username"><star /></set></formal>!</message>
+            <message>Can I give you career advice today?</message>
+            
+        <button>
+          <text> Yes </text>
+          <postback> WANTS CAREER ADVICE </postback>
+        </button>
+        
+        <button>
+          <text> No </text>
+          <postback> DOES NOT WANT CAREER ADVICE </postback>
+        </button>
+        
+        </template>
+    </category>
+    
+    <category>
+      <pattern> DOES NOT WANT CAREER ADVICE </pattern>
+      <template> Sorry I couldn't help! Please choose "Yes" if you would like career advice. </template>
+    </category>
+  
+  <category>
+      <pattern> WANTS CAREER ADVICE </pattern>
+      <template>
+          <message> Great! I'm here and happy to help! </message>
+          <message> Are you a computer science major? </message>
+          
+        <button>
+          <text> Yes </text>
+          <postback> CS MAJOR </postback>
+        </button>
+     
+        <button>
+          <text> No </text>
+          <postback> OTHER MAJOR </postback>
+        </button>
+        
+      </template>
+  </category>
+  
+  <category>
+      <pattern> OTHER MAJOR </pattern>
+      <template> Sorry! I am only available to give advice to Computer Science students. Please contact your school counselor for career advice! </template>
+  </category>
+    
+ <category>
+      <pattern> CS MAJOR </pattern>
+      <template> 
+      <message> Perfect! Here are some questions to point you in the right direction. </message> 
+      <message> Which of these topics are you most interested in? </message>
+      
+      <button>
+          <text> CODING </text>
+          <postback> CODING </postback>
+      </button>
+     
+      <button>
+          <text> SECURITY </text>
+          <postback> SECURITY </postback>
+      </button>
+      
+      <button>
+          <text> MATHEMATICS </text>
+          <postback> MATHEMATICS </postback>
+      </button>
+      
+      </template>
+ </category>
+
+  <category>
+      <pattern> CODING </pattern>
+      <template> 
+      <message> Are you more interested in designing websites or creating software? </message>
+      
+      <button>
+          <text> WEBSITES </text>
+          <postback> WEBSITES </postback>
+      </button>
+      
+      <button>
+          <text> SOFTWARE </text>
+          <postback> SOFTWARE </postback>
+      </button>
+      
+      </template>
+  </category>
+  
+  <category>
+      <pattern> WEBSITES </pattern>
+      <template> You could become a web developer!
+      <button>
+          <text> WEB DEVELOPER </text>
+          <url> https://www.betterteam.com/web-developer-job-description </url>
+      </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern> SOFTWARE </pattern>
+      <template> You have many options but the simplest would be becoming a computer programmer! 
+      <button>
+          <text> COMPUTER PROGRAMMER </text>
+          <url> https://www.thebalancecareers.com/computer-programmer-job-description-salary-and-skills-2061823 </url>
+      </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern> SECURITY </pattern>
+      <template> 
+      <message> Would you prefer to protect from cyber attacks or test security systems? </message>
+      
+      <button>
+          <text> PROTECTING </text>
+          <postback> PROTECT </postback>
+      </button>
+      
+      <button>
+          <text> TESTING </text>
+          <postback> TEST </postback>
+      </button>
+      
+      </template>
+  </category>
+  
+  <category>
+      <pattern> PROTECT </pattern>
+      <template> You should consider a job as a Cyber Security Specialist! 
+      <button>
+          <text> CYBER SECURITY SPECIALIST </text>
+          <url> https://www.mycomputercareer.edu/news/what-does-a-cyber-security-specialist-do/ </url>
+      </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern> TEST </pattern>
+      <template> You can become a penetration tester! 
+      <button>
+          <text> PENETRATION TESTER </text>
+          <url> https://www.4cornerresources.com/job-descriptions/penetration-tester/ </url>
+      </button>
+      </template>
+  </category>
+
+<category>
+      <pattern> MATHEMATICS </pattern>
+      <template> 
+      <message> Do you prefer statistics or number theory? </message>
+      
+      <button>
+          <text> STATISTICS </text>
+          <postback> STATS </postback>
+      </button>
+      
+      <button>
+          <text> NUMBER THEORY </text>
+          <postback> NUMBERS </postback>
+      </button>
+      
+      </template>
+  </category>
+  
+  <category>
+      <pattern> STATS </pattern>
+      <template> You should consider becoming a data scientist! 
+      <button>
+          <text> DATA SCIENTIST </text>
+          <url> https://www.northeastern.edu/graduate/blog/what-does-a-data-scientist-do/ </url>
+      </button>
+      </template>
+  </category>
+  
+  <category>
+      <pattern> NUMBERS </pattern>
+      <template> You may find cryptography to be an interesting job! 
+      <button>
+          <text> CRYPTOGRAPHER </text>
+          <url> https://www.cybersecurityjobs.com/cryptographer-jobs/ </url>
+      </button>
+      <postback> EXIT </postback>
+      </template>
+  </category>
+  
+    <category>
+        <pattern> EXIT </pattern>
+        <template> Thank you for using the WGU C951 Chatbot! Have a nice day! </template>
+    </category>
+
+</aiml>
